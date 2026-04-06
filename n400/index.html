@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>N-400 Naturalization Application | SmartUSVisa.com</title>
+  <meta name="description" content="Attorney-supervised N-400 citizenship application preparation. $1,199 flat fee for standard cases. Bilingual English/Chinese." />
+  <style>
+    :root {
+      --blue: #1a3a6b;
+      --blue-dark: #122a52;
+      --blue-light: #2a5298;
+      --gold: #c9a227;
+      --gold-light: #e8bf4a;
+      --white: #ffffff;
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-400: #9ca3af;
+      --gray-600: #4b5563;
+      --gray-700: #374151;
+      --gray-900: #111827;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+      --shadow: 0 4px 12px rgba(0,0,0,0.15);
+      --radius: 8px;
+      --radius-lg: 16px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; color: var(--gray-900); background: var(--white); line-height: 1.6; font-size: 16px; }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { color: var(--gold); }
+    h1,h2,h3,h4 { line-height: 1.25; font-weight: 700; color: var(--blue); }
+    h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); }
+    h2 { font-size: clamp(1.4rem, 3vw, 2rem); }
+    h3 { font-size: 1.2rem; }
+    p { color: var(--gray-700); margin-bottom: 1rem; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+    .section { padding: 5rem 0; }
+    .section-gray { background: var(--gray-50); }
+
+    /* NAV */
+    .nav { background: var(--blue); box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 0 1.5rem; height: 64px; max-width: 1100px; margin: 0 auto; }
+    .nav-logo { font-size: 1.2rem; font-weight: 800; color: var(--white); letter-spacing: -0.5px; }
+    .nav-logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 0.5rem; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,0.8); padding: 0.4rem 0.8rem; border-radius: var(--radius); font-size: 0.9rem; font-weight: 500; }
+    .nav-links a:hover, .nav-links a.active { color: var(--white); background: rgba(255,255,255,0.1); }
+
+    /* HERO */
+    .hero { background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 55%, var(--blue-light) 100%); color: var(--white); padding: 5rem 0 4rem; text-align: center; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(201,162,39,0.2); border: 1px solid rgba(201,162,39,0.4); color: var(--gold-light); padding: 0.35rem 1rem; border-radius: 100px; font-size: 0.82rem; font-weight: 600; margin-bottom: 1.25rem; }
+    .hero h1 { color: var(--white); max-width: 720px; margin: 0 auto 1.25rem; }
+    .hero h1 .gold { color: var(--gold); }
+    .hero-sub { color: rgba(255,255,255,0.82); font-size: 1.1rem; max-width: 580px; margin: 0 auto 2rem; }
+    .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* BUTTONS */
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.875rem 2rem; border-radius: 100px; font-weight: 700; font-size: 1rem; cursor: pointer; border: none; transition: all 0.2s; text-decoration: none; white-space: nowrap; }
+    .btn-primary { background: var(--gold); color: var(--blue); }
+    .btn-primary:hover { background: var(--gold-light); color: var(--blue); transform: translateY(-2px); box-shadow: var(--shadow); }
+    .btn-secondary { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.5); }
+    .btn-secondary:hover { background: rgba(255,255,255,0.1); color: var(--white); }
+    .btn-outline { background: transparent; color: var(--blue); border: 2px solid var(--blue); }
+    .btn-outline:hover { background: var(--blue); color: var(--white); }
+    .btn-lg { padding: 1.1rem 2.25rem; font-size: 1.05rem; }
+    .btn-block { width: 100%; text-align: center; display: block; }
+
+    /* TRUST BAR */
+    .trust-bar { background: var(--gray-50); border-top: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200); padding: 1.25rem 0; }
+    .trust-items { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem; }
+    .trust-item { font-size: 0.88rem; color: var(--gray-600); font-weight: 500; }
+
+    /* SECTION HEADER */
+    .section-header { text-align: center; margin-bottom: 3rem; }
+    .section-eyebrow { display: inline-block; color: var(--gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.5rem; }
+    .section-header p { max-width: 580px; margin: 0.75rem auto 0; color: var(--gray-600); }
+
+    /* CARDS */
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .card { background: var(--white); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); border: 1px solid var(--gray-200); transition: all 0.2s; }
+    .card:hover { box-shadow: var(--shadow); transform: translateY(-3px); }
+    .card-body { padding: 1.75rem; }
+    .card-icon { font-size: 1.75rem; margin-bottom: 0.75rem; }
+    .card h3 { margin-bottom: 0.5rem; font-size: 1.05rem; }
+    .card p { font-size: 0.9rem; margin-bottom: 0; }
+
+    /* WHO ITS FOR */
+    .for-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .for-card { border-radius: var(--radius); padding: 1.5rem; }
+    .for-card.yes { background: rgba(26,107,58,0.06); border: 1px solid rgba(26,107,58,0.2); }
+    .for-card.no  { background: rgba(107,26,26,0.05); border: 1px solid rgba(107,26,26,0.15); }
+    .for-card h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.75rem; }
+    .for-card.yes h4 { color: #1a6b3a; }
+    .for-card.no  h4 { color: #6b1a1a; }
+    .for-card ul { list-style: none; padding: 0; }
+    .for-card ul li { font-size: 0.9rem; padding: 0.3rem 0; color: var(--gray-700); display: flex; gap: 0.5rem; align-items: flex-start; }
+    .for-card.yes ul li::before { content: "✓"; color: #1a6b3a; font-weight: 700; flex-shrink: 0; }
+    .for-card.no  ul li::before { content: "✕"; color: #6b1a1a; font-weight: 700; flex-shrink: 0; }
+
+    /* HOW IT WORKS */
+    .steps-list { list-style: none; padding: 0; }
+    .steps-list li { display: flex; gap: 1rem; margin-bottom: 1.25rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--gray-200); align-items: flex-start; }
+    .steps-list li:last-child { border-bottom: none; margin-bottom: 0; }
+    .step-num { min-width: 36px; height: 36px; background: var(--gold); color: var(--blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; flex-shrink: 0; }
+    .step-content h4 { margin-bottom: 0.25rem; color: var(--blue); }
+    .step-content p { margin: 0; font-size: 0.9rem; color: var(--gray-600); }
+
+    /* PRICING */
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .pricing-card { background: var(--white); border: 2px solid var(--gray-200); border-radius: var(--radius-lg); padding: 2rem; }
+    .pricing-card.featured { border-color: var(--gold); box-shadow: 0 0 0 4px rgba(201,162,39,0.08); }
+    .pricing-eyebrow { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gold); margin-bottom: 0.5rem; }
+    .pricing-eyebrow.gray { color: var(--gray-400); }
+    .pricing-card h3 { color: var(--blue); font-size: 1.15rem; margin-bottom: 0.75rem; }
+    .pricing-price { font-size: 2.25rem; font-weight: 800; color: var(--blue); line-height: 1; }
+    .pricing-price-sub { font-size: 0.85rem; color: var(--gray-400); margin-bottom: 1.25rem; margin-top: 4px; }
+    .pricing-card ul { list-style: none; padding: 0; margin-bottom: 1.5rem; }
+    .pricing-card ul li { padding: 0.45rem 0; font-size: 0.9rem; color: var(--gray-700); display: flex; align-items: flex-start; gap: 0.5rem; }
+    .pricing-card ul li::before { content: "✓"; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+    .pricing-for { font-size: 0.82rem; color: var(--gray-400); border-top: 1px solid var(--gray-100); padding-top: 0.75rem; margin-top: 0.75rem; }
+    .pricing-note { font-size: 0.8rem; color: var(--gray-400); margin-top: 0.75rem; }
+
+    /* CTA BAND */
+    .cta-band { background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 100%); color: var(--white); padding: 5rem 0; text-align: center; }
+    .cta-band h2 { color: var(--white); margin-bottom: 1rem; }
+    .cta-band p { color: rgba(255,255,255,0.8); font-size: 1.05rem; margin-bottom: 2rem; max-width: 560px; margin-left: auto; margin-right: auto; }
+    .cta-btn-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* FOOTER */
+    .footer { background: var(--blue-dark); color: rgba(255,255,255,0.75); padding: 3rem 0 1.5rem; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2.5rem; margin-bottom: 2rem; }
+    .footer-logo { font-size: 1.2rem; font-weight: 800; color: var(--white); margin-bottom: 0.5rem; display: block; }
+    .footer-logo span { color: var(--gold); }
+    .footer-brand p { font-size: 0.88rem; color: rgba(255,255,255,0.5); }
+    .footer-col h4 { color: var(--white); font-size: 0.82rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.75rem; }
+    .footer-col ul { list-style: none; padding: 0; }
+    .footer-col li { margin-bottom: 0.4rem; }
+    .footer-col a { color: rgba(255,255,255,0.55); font-size: 0.88rem; }
+    .footer-col a:hover { color: var(--gold); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.25rem; }
+    .footer-bottom p { font-size: 0.78rem; color: rgba(255,255,255,0.35); margin-bottom: 0.25rem; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .grid-3 { grid-template-columns: 1fr; }
+      .for-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .hero { padding: 3.5rem 0 3rem; }
+      .section { padding: 3.5rem 0; }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 480px) {
+      .hero-btns { flex-direction: column; align-items: center; }
+      .cta-btn-group { flex-direction: column; align-items: center; }
+      .pricing-price { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Smart<span>US</span>Visa</a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/n400/" class="active">N-400 Citizenship</a></li>
+      <li><a href="/contact/">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">⚖️ Attorney-Supervised · EN / 中文</div>
+    <h1>Apply for U.S. Citizenship<br>with <span class="gold">Attorney-Guided</span> Support</h1>
+    <p class="hero-sub">AI-guided intake for standard N-400 cases, followed by attorney review. Faster, clearer, and more organized — with a licensed attorney in the loop.</p>
+    <div class="hero-btns">
+      <a href="#intake" class="btn btn-primary btn-lg">Start Free Eligibility Check</a>
+      <a href="#consultation" class="btn btn-secondary btn-lg">Book Attorney Consultation</a>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-items">
+      <span class="trust-item">✅ Licensed Attorney Review</span>
+      <span class="trust-item">✅ Flat Fee · No Surprises</span>
+      <span class="trust-item">✅ English + 中文 Support</span>
+      <span class="trust-item">✅ Finberg Firm PLLC</span>
+    </div>
+  </div>
+</div>
+
+<!-- BENEFITS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Why This Service</span>
+      <h2>A better way to prepare your N-400</h2>
+      <p>Mistakes in travel history, tax compliance, or background questions can create real risks. This service is built to help you get it right.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-icon">📋</div>
+          <h3>A clearer process from the start</h3>
+          <p>Instead of a blank government form, you are guided step by step through personal history, residence, travel, family, and background questions.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div class="card-icon">⚖️</div>
+          <h3>Automation for prep, attorney judgment for review</h3>
+          <p>Your information is organized through a digital workflow, then reviewed by a licensed attorney to identify risk points and inconsistencies.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div class="card-icon">🌐</div>
+          <h3>Bilingual support for Chinese-speaking applicants</h3>
+          <p>English and Chinese guidance helps make the naturalization process easier to understand and complete correctly.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO ITS FOR -->
+<section class="section section-gray">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Is This Right for You?</span>
+      <h2>Who this service is for</h2>
+    </div>
+    <div class="for-grid">
+      <div class="for-card yes">
+        <h4>✓ Good fit — Standard Path</h4>
+        <ul>
+          <li>Green card holder preparing for naturalization</li>
+          <li>Clear eligibility (5-year or 3-year rule)</li>
+          <li>No extended absences outside the U.S.</li>
+          <li>No criminal, tax, or Selective Service issues</li>
+          <li>Want guided support, not a blank form</li>
+          <li>Prefer bilingual (EN/中文) assistance</li>
+        </ul>
+      </div>
+      <div class="for-card no">
+        <h4>✕ May need attorney consultation first</h4>
+        <ul>
+          <li>Single trip outside U.S. over 6 months</li>
+          <li>Arrests, charges, or conviction history</li>
+          <li>Tax compliance issues or outstanding obligations</li>
+          <li>Selective Service registration concerns</li>
+          <li>Prior removal, denial, or immigration violations</li>
+          <li>Other complex legal background</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">How It Works</span>
+      <h2>From eligibility check to attorney review</h2>
+    </div>
+    <ul class="steps-list">
+      <li>
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h4>Online Eligibility Pre-Screen</h4>
+          <p>Complete a short intake to determine whether your case qualifies for the standard automated path. Takes about 5 minutes.</p>
+        </div>
+      </li>
+      <li>
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h4>Guided Information Collection</h4>
+          <p>The system walks you through biographical details, address history, travel history, marital and family information, employment, and background questions — in English or Chinese.</p>
+        </div>
+      </li>
+      <li>
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h4>Structured Draft Preparation</h4>
+          <p>Your responses are organized into a structured package for N-400 preparation and legal review.</p>
+        </div>
+      </li>
+      <li>
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <h4>Attorney Review</h4>
+          <p>A licensed attorney at Finberg Firm PLLC reviews your information, flags potential issues, and requests clarification where needed.</p>
+        </div>
+      </li>
+      <li>
+        <div class="step-num">5</div>
+        <div class="step-content">
+          <h4>Filing Preparation &amp; Next-Step Guidance</h4>
+          <p>After review, you receive a filing-ready package and guidance on biometrics, interview preparation, and follow-up requests.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section section-gray" id="pricing">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Pricing</span>
+      <h2>Transparent, flat-fee pricing</h2>
+      <p>No hourly billing. No surprise charges. Standard cases get a fixed price. Non-standard cases start with an attorney consultation.</p>
+    </div>
+    <div class="pricing-grid">
+
+      <div class="pricing-card featured">
+        <p class="pricing-eyebrow">Standard Path</p>
+        <h3>Automated N-400 Standard Package</h3>
+        <div class="pricing-price">$1,199</div>
+        <div class="pricing-price-sub">flat fee &nbsp;·&nbsp; standard cases only</div>
+        <ul>
+          <li>Online eligibility pre-screen</li>
+          <li>Guided bilingual digital intake</li>
+          <li>Structured N-400 draft preparation</li>
+          <li>Attorney final review</li>
+          <li>Pre-filing guidance &amp; next-step instructions</li>
+        </ul>
+        <a href="#intake" class="btn btn-primary btn-block">Start Free Eligibility Check</a>
+        <p class="pricing-note">USCIS filing fees are separate. Available only for cases that qualify for the standard automated path.</p>
+        <p class="pricing-for">For: Clear eligibility, no travel/tax/criminal/enforcement risk (Green Path cases)</p>
+      </div>
+
+      <div class="pricing-card" id="consultation">
+        <p class="pricing-eyebrow gray">Non-Standard Cases</p>
+        <h3>Attorney Consultation</h3>
+        <div class="pricing-price">$249</div>
+        <div class="pricing-price-sub">consultation fee &nbsp;·&nbsp; further services quoted after</div>
+        <ul>
+          <li>One-on-one attorney consultation</li>
+          <li>Case-specific eligibility &amp; risk review</li>
+          <li>Guidance on whether and how to proceed</li>
+          <li>Further legal service pricing after consultation</li>
+        </ul>
+        <a href="#book" class="btn btn-outline btn-block">Book Attorney Consultation</a>
+        <p class="pricing-for">For: Travel complications, criminal/arrest history, tax or Selective Service issues, or other legal complexity</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band" id="intake">
+  <div class="container">
+    <h2>Start with a free eligibility check</h2>
+    <p>Takes about 5 minutes. Find out whether your case qualifies for the $1,199 standard package — before you pay anything.</p>
+    <div class="cta-btn-group">
+      <a href="#tally-form" class="btn btn-primary btn-lg">Start Free Eligibility Check</a>
+      <a href="#consultation" class="btn btn-secondary btn-lg">Book $249 Attorney Consultation</a>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<section style="padding: 2rem 0; border-top: 1px solid var(--gray-200);">
+  <div class="container">
+    <p style="font-size:0.78rem;color:var(--gray-400);line-height:1.7;margin:0;">
+      This page is for general informational purposes only and does not constitute legal advice.
+      Viewing this page or submitting information does not create an attorney-client relationship.
+      Eligibility and case outcomes depend on the specific facts of each matter and the review of the relevant government agency.
+      Prior results do not guarantee similar outcomes.
+      Attorney services are provided by Finberg Firm PLLC. Automation tools are used to support intake, organization, and preparation only and do not replace attorney legal judgment.
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="footer-logo">Smart<span>US</span>Visa</a>
+        <p>Attorney-supervised immigration services.<br>Powered by Finberg Firm PLLC.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul><li><a href="/n400/">N-400 Citizenship</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Firm</h4>
+        <ul>
+          <li><a href="https://finbergfirm.com" target="_blank">Finberg Firm PLLC</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Finberg Firm PLLC · Fort Lauderdale, FL · Orlando, FL</p>
+      <p>Attorney advertising. Prior results do not guarantee similar outcomes. This website does not constitute legal advice and does not create an attorney-client relationship.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

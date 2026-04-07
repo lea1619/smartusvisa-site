@@ -374,6 +374,88 @@
   </div>
 </section>
 
+<!-- 资格预审表单 -->
+<section class="section" id="tally-form" style="background:#f8faff;border-top:1px solid #e5e7eb;">
+  <div class="container" style="max-width:640px;">
+    <div class="section-header">
+      <span class="section-eyebrow">免费资格预审</span>
+      <h2>了解您的案件是否符合条件</h2>
+      <p>大约3分钟，无需付款。</p>
+    </div>
+    <form action="https://formspree.io/f/xeepnrna" method="POST" style="background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:2rem;">
+
+      <div style="margin-bottom:1.25rem;">
+        <label style="display:block;font-weight:600;color:#1a3a6b;margin-bottom:0.4rem;">您目前是否持有美国绿卡（永久居留权）？ *</label>
+        <select name="is_lpr" required style="width:100%;padding:0.75rem;border:1px solid #e5e7eb;border-radius:8px;font-size:1rem;">
+          <option value="">请选择...</option>
+          <option value="yes">是</option>
+          <option value="no">否</option>
+        </select>
+      </div>
+
+      <div style="margin-bottom:1.25rem;">
+        <label style="display:block;font-weight:600;color:#1a3a6b;margin-bottom:0.4rem;">您的绿卡是什么时候批准的？ *</label>
+        <input type="date" name="lpr_date" required style="width:100%;padding:0.75rem;border:1px solid #e5e7eb;border-radius:8px;font-size:1rem;" />
+      </div>
+
+      <div style="margin-bottom:1.25rem;">
+        <label style="display:block;font-weight:600;color:#1a3a6b;margin-bottom:0.4rem;">您适用哪种入籍资格路径？ *</label>
+        <select name="eligibility_path" required style="width:100%;padding:0.75rem;border:1px solid #e5e7eb;border-radius:8px;font-size:1rem;">
+          <option value="">请选择...</option>
+          <option value="5year">5年居住规则</option>
+          <option value="3year">3年规则（已婚美国公民配偶）</option>
+          <option value="military">军事服役</option>
+          <option value="unsure">不确定</option>
+        </select>
+      </div>
+
+      <div style="margin-bottom:1.25rem;">
+        <label style="display:block;font-weight:600;color:#1a3a6b;margin-bottom:0.4rem;">过去5年内，您是否曾单次离开美国超过6个月？ *</label>
+        <select name="long_trip" required style="width:100%;padding:0.75rem;border:1px solid #e5e7eb;border-radius:8px;font-size:1rem;">
+          <option value="">请选择...</option>
+          <option value="no">没有</option>
+          <option value="yes_6mo">有，超过6个月</option>
+          <option value="yes_1yr">有，超过1年</option>
+        </select>
+      </div>
+
+      <div style="margin-bottom:1.25rem;">
+        <label style="display:block;font-weight:600;color:#1a3a6b;margin-bottom:0.4rem;">您是否曾被逮捕、起诉或定罪？ *</label>
+        <select name="criminal_history" required style="width:100%;padding:0.75rem;border:1px solid #e5e7eb;border-radius:8px;font-size:1rem;">
+          <option value="">请选择...</option>
+          <option value="no">没有</option>
+          <option value="yes">有</option>
+        </select>
+      </div>
+
+      <div style="margin-bottom:1.25rem;">
+        <label style="display:block;font-weight:600;color:#1a3a6b;margin-bottom:0.4rem;">您是否有税务问题或欠税未缴？ *</label>
+        <select name="tax_issue" required style="width:100%;padding:0.75rem;border:1px solid #e5e7eb;border-radius:8px;font-size:1rem;">
+          <option value="">请选择...</option>
+          <option value="no">没有</option>
+          <option value="yes">有</option>
+        </select>
+      </div>
+
+      <div style="margin-bottom:1.25rem;">
+        <label style="display:block;font-weight:600;color:#1a3a6b;margin-bottom:0.4rem;">您的姓名 *</label>
+        <input type="text" name="name" required placeholder="请输入姓名" style="width:100%;padding:0.75rem;border:1px solid #e5e7eb;border-radius:8px;font-size:1rem;" />
+      </div>
+
+      <div style="margin-bottom:1.25rem;">
+        <label style="display:block;font-weight:600;color:#1a3a6b;margin-bottom:0.4rem;">您的电子邮件 *</label>
+        <input type="email" name="email" required placeholder="email@example.com" style="width:100%;padding:0.75rem;border:1px solid #e5e7eb;border-radius:8px;font-size:1rem;" />
+      </div>
+
+      <input type="hidden" name="language" value="chinese" />
+
+      <button type="submit" style="width:100%;background:#c9a227;color:#1a3a6b;font-weight:700;font-size:1rem;padding:1rem;border:none;border-radius:100px;cursor:pointer;">提交资格预审 →</button>
+
+      <p style="font-size:0.78rem;color:#9ca3af;margin-top:1rem;text-align:center;">提交此表单不构成法律意见，也不形成律师—客户关系。</p>
+    </form>
+  </div>
+</section>
+
 <!-- CTA BAND -->
 <section class="cta-band" id="intake">
   <div class="container">

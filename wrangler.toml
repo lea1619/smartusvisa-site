@@ -1,0 +1,6 @@
+name = "smartusvisa-site"
+account_id = "e459af889af200dc8d67459cd1bb1fca"
+compatibility_date = "2026-04-06"
+
+[assets]
+directory = "."

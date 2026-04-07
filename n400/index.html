@@ -376,89 +376,26 @@
 
 <!-- INTAKE FORM -->
 <section class="section" id="tally-form" style="background:#f8faff;border-top:1px solid #e5e7eb;">
-  <div class="container" style="max-width:640px;">
+  <div class="container" style="max-width:680px;">
     <div class="section-header">
       <span class="section-eyebrow">Free Eligibility Check</span>
       <h2>Find out if your case qualifies</h2>
       <p>Takes about 3 minutes. No payment required.</p>
     </div>
-    <form action="https://formspree.io/f/xeepnrna" method="POST" style="background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:2rem;">
-
-      <div style="margin-bottom:1.25rem;">
-        <label style="display:block;font-weight:600;color:#1a3a6b;margin-bottom:0.4rem;">Are you currently a U.S. Lawful Permanent Resident (green card holder)? *</label>
-        <select name="is_lpr" required style="width:100%;padding:0.75rem;border:1px solid #e5e7eb;border-radius:8px;font-size:1rem;">
-          <option value="">Select...</option>
-          <option value="yes">Yes</option>
-          <option value="no">No</option>
-        </select>
-      </div>
-
-      <div style="margin-bottom:1.25rem;">
-        <label style="display:block;font-weight:600;color:#1a3a6b;margin-bottom:0.4rem;">When was your green card approved? *</label>
-        <input type="date" name="lpr_date" required style="width:100%;padding:0.75rem;border:1px solid #e5e7eb;border-radius:8px;font-size:1rem;" />
-      </div>
-
-      <div style="margin-bottom:1.25rem;">
-        <label style="display:block;font-weight:600;color:#1a3a6b;margin-bottom:0.4rem;">Which eligibility path applies to you? *</label>
-        <select name="eligibility_path" required style="width:100%;padding:0.75rem;border:1px solid #e5e7eb;border-radius:8px;font-size:1rem;">
-          <option value="">Select...</option>
-          <option value="5year">5-year residency rule</option>
-          <option value="3year">3-year rule (married to U.S. citizen)</option>
-          <option value="military">Military service</option>
-          <option value="unsure">Not sure</option>
-        </select>
-      </div>
-
-      <div style="margin-bottom:1.25rem;">
-        <label style="display:block;font-weight:600;color:#1a3a6b;margin-bottom:0.4rem;">Have you had a single trip outside the U.S. lasting more than 6 months in the past 5 years? *</label>
-        <select name="long_trip" required style="width:100%;padding:0.75rem;border:1px solid #e5e7eb;border-radius:8px;font-size:1rem;">
-          <option value="">Select...</option>
-          <option value="no">No</option>
-          <option value="yes_6mo">Yes, more than 6 months</option>
-          <option value="yes_1yr">Yes, more than 1 year</option>
-        </select>
-      </div>
-
-      <div style="margin-bottom:1.25rem;">
-        <label style="display:block;font-weight:600;color:#1a3a6b;margin-bottom:0.4rem;">Have you ever been arrested, charged, or convicted of a crime? *</label>
-        <select name="criminal_history" required style="width:100%;padding:0.75rem;border:1px solid #e5e7eb;border-radius:8px;font-size:1rem;">
-          <option value="">Select...</option>
-          <option value="no">No</option>
-          <option value="yes">Yes</option>
-        </select>
-      </div>
-
-      <div style="margin-bottom:1.25rem;">
-        <label style="display:block;font-weight:600;color:#1a3a6b;margin-bottom:0.4rem;">Do you have any tax compliance issues or unpaid taxes? *</label>
-        <select name="tax_issue" required style="width:100%;padding:0.75rem;border:1px solid #e5e7eb;border-radius:8px;font-size:1rem;">
-          <option value="">Select...</option>
-          <option value="no">No</option>
-          <option value="yes">Yes</option>
-        </select>
-      </div>
-
-      <div style="margin-bottom:1.25rem;">
-        <label style="display:block;font-weight:600;color:#1a3a6b;margin-bottom:0.4rem;">Your full name *</label>
-        <input type="text" name="name" required placeholder="Full name" style="width:100%;padding:0.75rem;border:1px solid #e5e7eb;border-radius:8px;font-size:1rem;" />
-      </div>
-
-      <div style="margin-bottom:1.25rem;">
-        <label style="display:block;font-weight:600;color:#1a3a6b;margin-bottom:0.4rem;">Your email address *</label>
-        <input type="email" name="email" required placeholder="email@example.com" style="width:100%;padding:0.75rem;border:1px solid #e5e7eb;border-radius:8px;font-size:1rem;" />
-      </div>
-
-      <div style="margin-bottom:1.5rem;">
-        <label style="display:block;font-weight:600;color:#1a3a6b;margin-bottom:0.4rem;">Preferred language</label>
-        <select name="language" style="width:100%;padding:0.75rem;border:1px solid #e5e7eb;border-radius:8px;font-size:1rem;">
-          <option value="english">English</option>
-          <option value="chinese">中文 (Chinese)</option>
-        </select>
-      </div>
-
-      <button type="submit" style="width:100%;background:#c9a227;color:#1a3a6b;font-weight:700;font-size:1rem;padding:1rem;border:none;border-radius:100px;cursor:pointer;">Submit Eligibility Check →</button>
-
-      <p style="font-size:0.78rem;color:#9ca3af;margin-top:1rem;text-align:center;">Submitting this form does not create an attorney-client relationship and is not legal advice.</p>
-    </form>
+    <!-- JotForm Eligibility Pre-Screen -->
+    <div style="background:#fff;border:1px solid #e5e7eb;border-radius:16px;overflow:hidden;">
+      <iframe
+        id="JotFormIFrame-260964177230155"
+        title="N-400 Eligibility Pre-Screen"
+        src="https://form.jotform.com/260964177230155"
+        style="min-width:100%;max-width:100%;height:600px;border:none;"
+        scrolling="no"
+        allow="geolocation; microphone; camera"
+      ></iframe>
+    </div>
+    <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
+    <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-260964177230155']", "https://form.jotform.com")</script>
+    <p style="font-size:0.78rem;color:#9ca3af;margin-top:0.75rem;text-align:center;">Submitting this form does not create an attorney-client relationship and is not legal advice.</p>
   </div>
 </section>
 

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>N-400 Naturalization Application | SmartUSVisa.com</title>
-  <meta name="description" content="Attorney-supervised N-400 citizenship application preparation. $1,199 flat fee for standard cases. Bilingual English/Chinese." />
+  <title>N-400 入籍申请服务 | SmartUSVisa.com</title>
+  <meta name="description" content="律师监督下的 N-400 入籍申请准备服务。AI 引导填写 + 律师审核。标准案固定价 $1,199。中英文双语支持。" />
   <style>
     :root {
       --blue: #1a3a6b;
@@ -27,13 +27,13 @@
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; color: var(--gray-900); background: var(--white); line-height: 1.6; font-size: 16px; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif; color: var(--gray-900); background: var(--white); line-height: 1.7; font-size: 16px; }
     a { color: var(--blue); text-decoration: none; }
     a:hover { color: var(--gold); }
-    h1,h2,h3,h4 { line-height: 1.25; font-weight: 700; color: var(--blue); }
-    h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); }
-    h2 { font-size: clamp(1.4rem, 3vw, 2rem); }
-    h3 { font-size: 1.2rem; }
+    h1,h2,h3,h4 { line-height: 1.3; font-weight: 700; color: var(--blue); }
+    h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
+    h2 { font-size: clamp(1.4rem, 3vw, 1.9rem); }
+    h3 { font-size: 1.15rem; }
     p { color: var(--gray-700); margin-bottom: 1rem; }
     .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
     .section { padding: 5rem 0; }
@@ -44,9 +44,14 @@
     .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 0 1.5rem; height: 64px; max-width: 1100px; margin: 0 auto; }
     .nav-logo { font-size: 1.2rem; font-weight: 800; color: var(--white); letter-spacing: -0.5px; }
     .nav-logo span { color: var(--gold); }
-    .nav-links { display: flex; gap: 0.5rem; list-style: none; }
+    .nav-links { display: flex; gap: 0.25rem; list-style: none; align-items: center; }
     .nav-links a { color: rgba(255,255,255,0.8); padding: 0.4rem 0.8rem; border-radius: var(--radius); font-size: 0.9rem; font-weight: 500; }
     .nav-links a:hover, .nav-links a.active { color: var(--white); background: rgba(255,255,255,0.1); }
+    .btn-nav-cta { background: var(--gold) !important; color: var(--blue) !important; font-weight: 700 !important; padding: 0.5rem 1.1rem !important; border-radius: 100px !important; }
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; flex-direction: column; gap: 5px; }
+    .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; }
+    .lang-switch { font-size: 0.82rem; color: rgba(255,255,255,0.6); padding: 0.3rem 0.6rem; border: 1px solid rgba(255,255,255,0.25); border-radius: 4px; margin-left: 0.5rem; }
+    .lang-switch:hover { color: var(--white); border-color: rgba(255,255,255,0.5); }
 
     /* HERO */
     .hero { background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 55%, var(--blue-light) 100%); color: var(--white); padding: 5rem 0 4rem; text-align: center; }
@@ -91,7 +96,7 @@
     .for-card { border-radius: var(--radius); padding: 1.5rem; }
     .for-card.yes { background: rgba(26,107,58,0.06); border: 1px solid rgba(26,107,58,0.2); }
     .for-card.no  { background: rgba(107,26,26,0.05); border: 1px solid rgba(107,26,26,0.15); }
-    .for-card h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.75rem; }
+    .for-card h4 { font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.75rem; }
     .for-card.yes h4 { color: #1a6b3a; }
     .for-card.no  h4 { color: #6b1a1a; }
     .for-card ul { list-style: none; padding: 0; }
@@ -111,9 +116,9 @@
     .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
     .pricing-card { background: var(--white); border: 2px solid var(--gray-200); border-radius: var(--radius-lg); padding: 2rem; }
     .pricing-card.featured { border-color: var(--gold); box-shadow: 0 0 0 4px rgba(201,162,39,0.08); }
-    .pricing-eyebrow { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gold); margin-bottom: 0.5rem; }
+    .pricing-eyebrow { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--gold); margin-bottom: 0.5rem; }
     .pricing-eyebrow.gray { color: var(--gray-400); }
-    .pricing-card h3 { color: var(--blue); font-size: 1.15rem; margin-bottom: 0.75rem; }
+    .pricing-card h3 { color: var(--blue); font-size: 1.1rem; margin-bottom: 0.75rem; }
     .pricing-price { font-size: 2.25rem; font-weight: 800; color: var(--blue); line-height: 1; }
     .pricing-price-sub { font-size: 0.85rem; color: var(--gray-400); margin-bottom: 1.25rem; margin-top: 4px; }
     .pricing-card ul { list-style: none; padding: 0; margin-bottom: 1.5rem; }
@@ -149,7 +154,10 @@
       .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
       .hero { padding: 3.5rem 0 3rem; }
       .section { padding: 3.5rem 0; }
-      .nav-links { display: none; }
+      .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; background: var(--blue); padding: 1rem; flex-direction: column; gap: 0; z-index: 999; }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: flex; }
+      .nav { position: relative; }
     }
     @media (max-width: 480px) {
       .hero-btns { flex-direction: column; align-items: center; }
@@ -164,18 +172,18 @@
 <nav class="nav">
   <div class="nav-inner">
     <a href="/" class="nav-logo">Smart<span>US</span>Visa</a>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <button class="nav-toggle" id="navToggle" aria-label="菜单"><span></span><span></span><span></span></button>
     <ul class="nav-links" id="navLinks">
-      <li><a href="/">Home</a></li>
-      <li><a href="/visas.html">All Visas</a></li>
-      <li><a href="/work-visas.html">Work Visas</a></li>
-      <li><a href="/green-cards.html">Green Cards</a></li>
-      <li><a href="/n400/" class="active">N-400 Citizenship</a></li>
-      <li><a href="/resources.html">Resources</a></li>
-      <li><a href="/about.html">About</a></li>
-      <li><a href="/#quiz" class="btn-nav-cta">Take Quiz</a></li>
-      <li><a href="/contact.html" style="color:rgba(255,255,255,0.7);padding:0.5rem 0.75rem;">Consult</a></li>
-      <li><a href="/n400/zh/" style="font-size:0.82rem;color:rgba(255,255,255,0.6);padding:0.3rem 0.6rem;border:1px solid rgba(255,255,255,0.25);border-radius:4px;margin-left:0.25rem;">中文</a></li>
+      <li><a href="/">首页</a></li>
+      <li><a href="/visas.html">所有签证</a></li>
+      <li><a href="/work-visas.html">工作签证</a></li>
+      <li><a href="/green-cards.html">绿卡</a></li>
+      <li><a href="/n400/zh/" class="active">N-400 入籍</a></li>
+      <li><a href="/resources.html">资源</a></li>
+      <li><a href="/about.html">关于我们</a></li>
+      <li><a href="/#quiz" class="btn-nav-cta">签证测评</a></li>
+      <li><a href="/contact.html" style="color:rgba(255,255,255,0.7);padding:0.5rem 0.75rem;">咨询律师</a></li>
+      <li><a href="/n400/" class="lang-switch">EN</a></li>
     </ul>
   </div>
 </nav>
@@ -183,12 +191,12 @@
 <!-- HERO -->
 <section class="hero">
   <div class="container">
-    <div class="hero-badge">⚖️ Attorney-Supervised · EN / 中文</div>
-    <h1>Apply for U.S. Citizenship<br>with <span class="gold">Attorney-Guided</span> Support</h1>
-    <p class="hero-sub">AI-guided intake for standard N-400 cases, followed by attorney review. Faster, clearer, and more organized — with a licensed attorney in the loop.</p>
+    <div class="hero-badge">⚖️ 律师全程监督 · 中英双语</div>
+    <h1>更省心地完成 N-400 入籍申请<br><span class="gold">AI 引导填写 + 律师审核把关</span></h1>
+    <p class="hero-sub">标准案件 AI 引导完成信息采集，律师最终审核，比自己填写更快、更清晰，全程有执照律师把关。</p>
     <div class="hero-btns">
-      <a href="#intake" class="btn btn-primary btn-lg">Start Free Eligibility Check</a>
-      <a href="#consultation" class="btn btn-secondary btn-lg">Book Attorney Consultation</a>
+      <a href="#intake" class="btn btn-primary btn-lg">免费开始资格预审</a>
+      <a href="#consultation" class="btn btn-secondary btn-lg">预约律师咨询</a>
     </div>
   </div>
 </section>
@@ -197,9 +205,9 @@
 <div class="trust-bar">
   <div class="container">
     <div class="trust-items">
-      <span class="trust-item">✅ Licensed Attorney Review</span>
-      <span class="trust-item">✅ Flat Fee · No Surprises</span>
-      <span class="trust-item">✅ English + 中文 Support</span>
+      <span class="trust-item">✅ 执照律师审核</span>
+      <span class="trust-item">✅ 固定价格 · 无隐藏费用</span>
+      <span class="trust-item">✅ 中英双语服务</span>
       <span class="trust-item">✅ Finberg Firm PLLC</span>
     </div>
   </div>
@@ -209,30 +217,30 @@
 <section class="section">
   <div class="container">
     <div class="section-header">
-      <span class="section-eyebrow">Why This Service</span>
-      <h2>A better way to prepare your N-400</h2>
-      <p>Mistakes in travel history, tax compliance, or background questions can create real risks. This service is built to help you get it right.</p>
+      <span class="section-eyebrow">为什么选择这项服务</span>
+      <h2>更好的 N-400 申请准备方式</h2>
+      <p>出行记录、税务合规或背景问题的错误都可能带来真实风险。这项服务帮助您把每一步都做对。</p>
     </div>
     <div class="grid-3">
       <div class="card">
         <div class="card-body">
           <div class="card-icon">📋</div>
-          <h3>A clearer process from the start</h3>
-          <p>Instead of a blank government form, you are guided step by step through personal history, residence, travel, family, and background questions.</p>
+          <h3>流程更清晰，从第一步就不迷路</h3>
+          <p>不再面对空白政府表格。系统会分步骤引导您填写个人信息、居住历史、旅行记录、婚姻家庭及背景问题。</p>
         </div>
       </div>
       <div class="card">
         <div class="card-body">
           <div class="card-icon">⚖️</div>
-          <h3>Automation for prep, attorney judgment for review</h3>
-          <p>Your information is organized through a digital workflow, then reviewed by a licensed attorney to identify risk points and inconsistencies.</p>
+          <h3>自动化整理，律师法律审核</h3>
+          <p>信息采集通过数字化流程完成，再由执照律师审核，识别潜在风险点和不一致内容。</p>
         </div>
       </div>
       <div class="card">
         <div class="card-body">
           <div class="card-icon">🌐</div>
-          <h3>Bilingual support for Chinese-speaking applicants</h3>
-          <p>English and Chinese guidance helps make the naturalization process easier to understand and complete correctly.</p>
+          <h3>专为华人申请人设计的双语体验</h3>
+          <p>中英文双语说明，让复杂的入籍申请流程更容易理解、更容易准确完成。</p>
         </div>
       </div>
     </div>
@@ -243,30 +251,30 @@
 <section class="section section-gray">
   <div class="container">
     <div class="section-header">
-      <span class="section-eyebrow">Is This Right for You?</span>
-      <h2>Who this service is for</h2>
+      <span class="section-eyebrow">这项服务适合你吗？</span>
+      <h2>适合哪些申请人</h2>
     </div>
     <div class="for-grid">
       <div class="for-card yes">
-        <h4>✓ Good fit — Standard Path</h4>
+        <h4>✓ 适合 — 标准路径</h4>
         <ul>
-          <li>Green card holder preparing for naturalization</li>
-          <li>Clear eligibility (5-year or 3-year rule)</li>
-          <li>No extended absences outside the U.S.</li>
-          <li>No criminal, tax, or Selective Service issues</li>
-          <li>Want guided support, not a blank form</li>
-          <li>Prefer bilingual (EN/中文) assistance</li>
+          <li>持绿卡准备申请入籍</li>
+          <li>资格路径清晰（5年或3年规则）</li>
+          <li>无长时间在美国境外居住记录</li>
+          <li>无犯罪、税务或选择性兵役问题</li>
+          <li>希望有引导支持，而不是自己面对空白表格</li>
+          <li>希望中英双语服务</li>
         </ul>
       </div>
       <div class="for-card no">
-        <h4>✕ May need attorney consultation first</h4>
+        <h4>✕ 可能需要先预约律师咨询</h4>
         <ul>
-          <li>Single trip outside U.S. over 6 months</li>
-          <li>Arrests, charges, or conviction history</li>
-          <li>Tax compliance issues or outstanding obligations</li>
-          <li>Selective Service registration concerns</li>
-          <li>Prior removal, denial, or immigration violations</li>
-          <li>Other complex legal background</li>
+          <li>单次离境超过6个月</li>
+          <li>有逮捕、指控或定罪记录</li>
+          <li>有税务合规问题或欠税</li>
+          <li>选择性兵役登记问题</li>
+          <li>曾被驱逐、申请被拒或有移民违规记录</li>
+          <li>其他复杂法律背景</li>
         </ul>
       </div>
     </div>
@@ -277,43 +285,43 @@
 <section class="section">
   <div class="container">
     <div class="section-header">
-      <span class="section-eyebrow">How It Works</span>
-      <h2>From eligibility check to attorney review</h2>
+      <span class="section-eyebrow">服务流程</span>
+      <h2>从资格预审到律师审核</h2>
     </div>
     <ul class="steps-list">
       <li>
         <div class="step-num">1</div>
         <div class="step-content">
-          <h4>Online Eligibility Pre-Screen</h4>
-          <p>Complete a short intake to determine whether your case qualifies for the standard automated path. Takes about 5 minutes.</p>
+          <h4>在线资格预审</h4>
+          <p>完成简短的资格预审表，判断您的案件是否适合进入标准自动化路径。大约5分钟。</p>
         </div>
       </li>
       <li>
         <div class="step-num">2</div>
         <div class="step-content">
-          <h4>Guided Information Collection</h4>
-          <p>The system walks you through biographical details, address history, travel history, marital and family information, employment, and background questions — in English or Chinese.</p>
+          <h4>引导式信息采集</h4>
+          <p>系统分步骤引导您填写个人信息、地址历史、旅行记录、婚姻家庭信息、就业及背景问题——支持中文或英文。</p>
         </div>
       </li>
       <li>
         <div class="step-num">3</div>
         <div class="step-content">
-          <h4>Structured Draft Preparation</h4>
-          <p>Your responses are organized into a structured package for N-400 preparation and legal review.</p>
+          <h4>结构化草稿整理</h4>
+          <p>您的信息被整理成 N-400 申请准备和法律审核用的结构化文件包。</p>
         </div>
       </li>
       <li>
         <div class="step-num">4</div>
         <div class="step-content">
-          <h4>Attorney Review</h4>
-          <p>A licensed attorney at Finberg Firm PLLC reviews your information, flags potential issues, and requests clarification where needed.</p>
+          <h4>律师审核</h4>
+          <p>Finberg Firm PLLC 执照律师审核您提交的信息，标出潜在问题，并在需要时要求补充说明。</p>
         </div>
       </li>
       <li>
         <div class="step-num">5</div>
         <div class="step-content">
-          <h4>Filing Preparation &amp; Next-Step Guidance</h4>
-          <p>After review, you receive a filing-ready package and guidance on biometrics, interview preparation, and follow-up requests.</p>
+          <h4>提交准备与后续指导</h4>
+          <p>审核完成后，您将获得可提交的申请文件包，以及生物识别采集、面谈准备和补件等后续步骤的说明。</p>
         </div>
       </li>
     </ul>
@@ -324,42 +332,42 @@
 <section class="section section-gray" id="pricing">
   <div class="container">
     <div class="section-header">
-      <span class="section-eyebrow">Pricing</span>
-      <h2>Transparent, flat-fee pricing</h2>
-      <p>No hourly billing. No surprise charges. Standard cases get a fixed price. Non-standard cases start with an attorney consultation.</p>
+      <span class="section-eyebrow">收费标准</span>
+      <h2>透明固定价格</h2>
+      <p>无按小时计费。无隐藏费用。标准案固定价格。非标准案从律师咨询开始。</p>
     </div>
     <div class="pricing-grid">
 
       <div class="pricing-card featured">
-        <p class="pricing-eyebrow">Standard Path</p>
-        <h3>Automated N-400 Standard Package</h3>
+        <p class="pricing-eyebrow">标准路径</p>
+        <h3>N-400 自动标准档</h3>
         <div class="pricing-price">$1,199</div>
-        <div class="pricing-price-sub">flat fee &nbsp;·&nbsp; standard cases only</div>
+        <div class="pricing-price-sub">固定价 &nbsp;·&nbsp; 仅限标准案</div>
         <ul>
-          <li>Online eligibility pre-screen</li>
-          <li>Guided bilingual digital intake</li>
-          <li>Structured N-400 draft preparation</li>
-          <li>Attorney final review</li>
-          <li>Pre-filing guidance &amp; next-step instructions</li>
+          <li>在线资格预审</li>
+          <li>中英双语引导式信息采集</li>
+          <li>N-400 结构化草稿整理</li>
+          <li>律师最终审核</li>
+          <li>提交前准备说明及后续指导</li>
         </ul>
-        <a href="#intake" class="btn btn-primary btn-block">Start Free Eligibility Check</a>
-        <p class="pricing-note">USCIS filing fees are separate. Available only for cases that qualify for the standard automated path.</p>
-        <p class="pricing-for">For: Clear eligibility, no travel/tax/criminal/enforcement risk (Green Path cases)</p>
+        <a href="#intake" class="btn btn-primary btn-block">免费开始资格预审</a>
+        <p class="pricing-note">USCIS 申请费另计。此套餐仅适用于通过资格预审的标准案。</p>
+        <p class="pricing-for">适合：资格清晰、无出行/税务/犯罪/执法风险的 Green Path 案件</p>
       </div>
 
       <div class="pricing-card" id="consultation">
-        <p class="pricing-eyebrow gray">Non-Standard Cases</p>
-        <h3>Attorney Consultation</h3>
+        <p class="pricing-eyebrow gray">非标准案</p>
+        <h3>律师咨询</h3>
         <div class="pricing-price">$249</div>
-        <div class="pricing-price-sub">consultation fee &nbsp;·&nbsp; further services quoted after</div>
+        <div class="pricing-price-sub">咨询费 &nbsp;·&nbsp; 后续服务咨询后另报</div>
         <ul>
-          <li>One-on-one attorney consultation</li>
-          <li>Case-specific eligibility &amp; risk review</li>
-          <li>Guidance on whether and how to proceed</li>
-          <li>Further legal service pricing after consultation</li>
+          <li>一对一律师咨询</li>
+          <li>案情资格与风险评估</li>
+          <li>明确是否可以及如何推进</li>
+          <li>咨询后进一步服务单独报价</li>
         </ul>
-        <a href="#book" class="btn btn-outline btn-block">Book Attorney Consultation</a>
-        <p class="pricing-for">For: Travel complications, criminal/arrest history, tax or Selective Service issues, or other legal complexity</p>
+        <a href="#book" class="btn btn-outline btn-block">预约律师咨询</a>
+        <p class="pricing-for">适合：出行记录复杂、有犯罪/逮捕记录、税务或选择性兵役问题、或其他需要律师单独评估的情况</p>
       </div>
 
     </div>
@@ -369,11 +377,11 @@
 <!-- CTA BAND -->
 <section class="cta-band" id="intake">
   <div class="container">
-    <h2>Start with a free eligibility check</h2>
-    <p>Takes about 5 minutes. Find out whether your case qualifies for the $1,199 standard package — before you pay anything.</p>
+    <h2>先做免费资格预审</h2>
+    <p>大约5分钟。在付费之前，先了解您的案件是否符合 $1,199 标准套餐的条件。</p>
     <div class="cta-btn-group">
-      <a href="#tally-form" class="btn btn-primary btn-lg">Start Free Eligibility Check</a>
-      <a href="#consultation" class="btn btn-secondary btn-lg">Book $249 Attorney Consultation</a>
+      <a href="#tally-form" class="btn btn-primary btn-lg">免费开始资格预审</a>
+      <a href="#consultation" class="btn btn-secondary btn-lg">预约 $249 律师咨询</a>
     </div>
   </div>
 </section>
@@ -382,11 +390,10 @@
 <section style="padding: 2rem 0; border-top: 1px solid var(--gray-200);">
   <div class="container">
     <p style="font-size:0.78rem;color:var(--gray-400);line-height:1.7;margin:0;">
-      This page is for general informational purposes only and does not constitute legal advice.
-      Viewing this page or submitting information does not create an attorney-client relationship.
-      Eligibility and case outcomes depend on the specific facts of each matter and the review of the relevant government agency.
-      Prior results do not guarantee similar outcomes.
-      Attorney services are provided by Finberg Firm PLLC. Automation tools are used to support intake, organization, and preparation only and do not replace attorney legal judgment.
+      本页面内容仅供一般信息参考，不构成法律意见，也不形成律师—客户关系。
+      浏览本页或提交信息不视为建立律师—客户关系。
+      申请资格及案件结果取决于个案具体事实及相关政府机构的审查结果。过往经验不代表未来结果。
+      律师服务由 Finberg Firm PLLC 提供。自动化工具仅用于信息采集、整理和准备，不能替代律师的法律判断。
     </p>
   </div>
 </section>
@@ -397,26 +404,32 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="/" class="footer-logo">Smart<span>US</span>Visa</a>
-        <p>Attorney-supervised immigration services.<br>Powered by Finberg Firm PLLC.</p>
+        <p>律师监督下的移民服务。<br>由 Finberg Firm PLLC 提供。</p>
       </div>
       <div class="footer-col">
-        <h4>Services</h4>
-        <ul><li><a href="/n400/">N-400 Citizenship</a></li></ul>
+        <h4>服务</h4>
+        <ul><li><a href="/n400/zh/">N-400 入籍申请</a></li></ul>
       </div>
       <div class="footer-col">
-        <h4>Firm</h4>
+        <h4>律所</h4>
         <ul>
           <li><a href="https://finbergfirm.com" target="_blank">Finberg Firm PLLC</a></li>
-          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/contact.html">联系我们</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <p>© 2026 Finberg Firm PLLC · Fort Lauderdale, FL · Orlando, FL</p>
-      <p>Attorney advertising. Prior results do not guarantee similar outcomes. This website does not constitute legal advice and does not create an attorney-client relationship.</p>
+      <p>律师广告。过往结果不保证类似结果。本网站不构成法律意见，不形成律师—客户关系。</p>
     </div>
   </div>
 </footer>
+
+<script>
+  const toggle = document.querySelector('.nav-toggle');
+  const links  = document.querySelector('.nav-links');
+  if (toggle) toggle.addEventListener('click', () => links.classList.toggle('open'));
+</script>
 
 </body>
 </html>

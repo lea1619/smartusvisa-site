@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Track Your Application | Finberg Firm</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f3f4f6; min-height: 100vh; }
+  .header { background: #1a3a6b; color: #fff; padding: 24px 32px; text-align: center; }
+  .header h1 { font-size: 22px; color: #c9a227; }
+  .header p  { font-size: 14px; color: #93c5fd; margin-top: 4px; }
+  .container { max-width: 560px; margin: 40px auto; padding: 0 16px; }
+  .card { background: #fff; border-radius: 12px; border: 1px solid #e5e7eb; padding: 32px; margin-bottom: 24px; }
+  h2 { font-size: 20px; color: #1a3a6b; margin-bottom: 8px; }
+  p  { font-size: 14px; color: #6b7280; margin-bottom: 20px; }
+  label { font-size: 13px; font-weight: 600; color: #374151; display: block; margin-bottom: 6px; }
+  input { width: 100%; padding: 12px 14px; border: 1px solid #d1d5db; border-radius: 8px;
+    font-size: 15px; margin-bottom: 16px; outline: none; transition: border .15s; }
+  input:focus { border-color: #1a3a6b; }
+  .btn { width: 100%; background: #1a3a6b; color: #c9a227; border: none; padding: 14px;
+    border-radius: 100px; font-size: 16px; font-weight: 700; cursor: pointer; transition: all .2s; }
+  .btn:hover { background: #c9a227; color: #1a3a6b; }
+  .result { display: none; }
+  .status-timeline { margin: 20px 0; }
+  .step { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 16px; }
+  .step-dot { width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; }
+  .step-dot.done    { background: #059669; color: #fff; }
+  .step-dot.active  { background: #1a3a6b; color: #c9a227; }
+  .step-dot.pending { background: #e5e7eb; color: #9ca3af; }
+  .step-content h3  { font-size: 15px; font-weight: 600; color: #1a1a1a; margin-bottom: 2px; }
+  .step-content p   { font-size: 13px; color: #6b7280; margin: 0; }
+  .step-connector   { width: 2px; height: 16px; background: #e5e7eb; margin-left: 15px; }
+  .step-connector.done { background: #059669; }
+  .alert-info   { background: #dbeafe; border: 1px solid #93c5fd; border-radius: 8px; padding: 14px 16px; font-size: 14px; color: #1e40af; margin-bottom: 16px; }
+  .alert-warn   { background: #fef3c7; border: 1px solid #fcd34d; border-radius: 8px; padding: 14px 16px; font-size: 14px; color: #92400e; margin-bottom: 16px; }
+  .alert-success{ background: #d1fae5; border: 1px solid #6ee7b7; border-radius: 8px; padding: 14px 16px; font-size: 14px; color: #065f46; margin-bottom: 16px; }
+  .lang-toggle  { text-align: right; margin-bottom: 12px; }
+  .lang-btn     { background: none; border: 1px solid #d1d5db; border-radius: 6px;
+    padding: 4px 12px; font-size: 13px; cursor: pointer; color: #374151; }
+  .lang-btn.active { background: #1a3a6b; color: #fff; border-color: #1a3a6b; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>Finberg Firm PLLC</h1>
+  <p>N-400 Application Status Tracker</p>
+</div>
+<div class="container">
+  <div class="lang-toggle">
+    <button class="lang-btn active" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('zh')">中文</button>
+  </div>
+  <div class="card" id="lookup-card">
+    <h2 id="t-title">Track Your Application</h2>
+    <p id="t-desc">Enter your email address and Case ID to check the status of your N-400 application.</p>
+    <label id="t-email-label">Email Address</label>
+    <input type="email" id="email-input" placeholder="your@email.com">
+    <label id="t-caseid-label">Case ID</label>
+    <input type="text" id="caseid-input" placeholder="n400_20260407_xxxxxx">
+    <button class="btn" id="t-search-btn" onclick="lookup()">Check Status →</button>
+    <p id="error-msg" style="color:#dc2626;margin-top:12px;display:none;"></p>
+  </div>
+  <div class="card result" id="result-card">
+    <div id="status-alert"></div>
+    <div class="status-timeline" id="timeline"></div>
+    <p style="font-size:12px;color:#9ca3af;margin-top:16px;" id="t-caseid-display"></p>
+  </div>
+</div>
+<script>
+const BACKEND = 'https://rangers-trainers-jerry-exceed.trycloudflare.com';
+let lang = 'en';
+const T = {
+  en: {
+    title: 'Track Your Application', desc: 'Enter your email address and Case ID to check the status of your N-400 application.',
+    emailLabel: 'Email Address', caseidLabel: 'Case ID', searchBtn: 'Check Status →',
+    notFound: 'Case not found. Please check your email and Case ID.',
+    steps: [['Application Submitted','We received your intake questionnaire.'],['Under Attorney Review','An attorney is reviewing your file (2–3 business days).'],['Attorney Approved','Your application has been approved and documents are ready.'],['Prepared for Filing','Your N-400 is ready to submit to USCIS.']],
+    statuses: { submitted:['info','Your application has been received. An attorney will begin review within 1 business day.'],under_review:['info','Your application is under attorney review. You will be notified within 2–3 business days.'],needs_info:['warn','Additional information is required. Please check your email for details.'],info_received:['info','We received your additional information. The attorney will re-review shortly.'],approved:['success','Your application has been approved! Please check your email for the final documents.'],filed:['success','Your N-400 has been prepared and is ready for filing with USCIS.'],manual:['warn','Your case requires a personal consultation. We will contact you shortly.'] }
+  },
+  zh: {
+    title: '查询申请状态', desc: '请输入您的电子邮箱和案件编号，查询 N-400 申请进度。',
+    emailLabel: '电子邮箱', caseidLabel: '案件编号', searchBtn: '查询 →',
+    notFound: '未找到相关案件，请检查您的邮箱和案件编号。',
+    steps: [['申请已提交','我们已收到您的完整问卷。'],['律师审核中','律师正在审核您的申请（2-3个工作日）。'],['律师已批准','您的申请已获批准，文件已准备好。'],['准备递交','您的 N-400 已准备好，可以提交 USCIS。']],
+    statuses: { submitted:['info','已收到您的申请，律师将在1个工作日内开始审核。'],under_review:['info','您的申请正在律师审核中，预计2-3个工作日内完成。'],needs_info:['warn','需要补充信息，请查收邮件了解详情。'],info_received:['info','已收到您提供的补充信息，律师将重新审核。'],approved:['success','您的申请已获批准！请查收邮件获取最终文件。'],filed:['success','您的 N-400 已准备好，可以提交 USCIS。'],manual:['warn','您的案件需要律师直接处理，我们将尽快与您联系。'] }
+  }
+};
+function setLang(l){lang=l;document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent.trim()===(l==='en'?'EN':'中文')));const t=T[l];document.getElementById('t-title').textContent=t.title;document.getElementById('t-desc').textContent=t.desc;document.getElementById('t-email-label').textContent=t.emailLabel;document.getElementById('t-caseid-label').textContent=t.caseidLabel;document.getElementById('t-search-btn').textContent=t.searchBtn;}
+async function lookup(){
+  const email=document.getElementById('email-input').value.trim();
+  const caseId=document.getElementById('caseid-input').value.trim();
+  const errEl=document.getElementById('error-msg');errEl.style.display='none';
+  if(!email||!caseId){errEl.textContent=lang==='en'?'Please enter both fields.':'请填写所有字段。';errEl.style.display='block';return;}
+  const res=await fetch(`${BACKEND}/status/lookup?email=${encodeURIComponent(email)}&case_id=${encodeURIComponent(caseId)}`);
+  const d=await res.json();
+  if(!d.found){errEl.textContent=T[lang].notFound;errEl.style.display='block';return;}
+  showResult(d.status,caseId);
+}
+function showResult(status,caseId){
+  document.getElementById('lookup-card').style.display='none';
+  const rc=document.getElementById('result-card');rc.style.display='block';rc.classList.add('result');
+  const t=T[lang];const si=t.statuses[status]||['info','Status updated.'];
+  const ac={'info':'alert-info','warn':'alert-warn','success':'alert-success'}[si[0]];
+  document.getElementById('status-alert').innerHTML=`<div class="${ac}">${si[1]}</div>`;
+  document.getElementById('t-caseid-display').textContent=`Case ID: ${caseId}`;
+  const so=['submitted','under_review','approved','filed'];const idx=so.indexOf(status);
+  const tl=document.getElementById('timeline');tl.innerHTML='';
+  t.steps.forEach((step,i)=>{
+    const isDone=i<=idx;const isActive=i===idx;
+    const dc=isDone?(isActive?'active':'done'):'pending';
+    const icon=isDone?(isActive?'●':'✓'):String(i+1);
+    if(i>0)tl.innerHTML+=`<div class="step-connector ${i<=idx?'done':''}"></div>`;
+    tl.innerHTML+=`<div class="step"><div class="step-dot ${dc}">${icon}</div><div class="step-content"><h3>${step[0]}</h3><p>${step[1]}</p></div></div>`;
+  });
+}
+const params=new URLSearchParams(window.location.search);
+if(params.get('case_id'))document.getElementById('caseid-input').value=params.get('case_id');
+if(params.get('email'))document.getElementById('email-input').value=params.get('email');
+if(params.get('lang')==='zh')setLang('zh');
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Redirecting to Attorney Review Portal…</title>
+<script>
+  const BACKEND = 'https://rangers-trainers-jerry-exceed.trycloudflare.com';
+  // Extract token from path: /review/TOKEN or /review/TOKEN/
+  const parts = window.location.pathname.split('/').filter(Boolean);
+  // parts[0] = 'review', parts[1] = token
+  const token = parts[1] || '';
+  if (token) {
+    window.location.replace(BACKEND + '/review/' + token);
+  } else {
+    window.location.replace(BACKEND + '/review/');
+  }
+</script>
+</head>
+<body><p style="font-family:sans-serif;padding:40px;text-align:center;">Redirecting to attorney review portal…</p></body>
+</html>

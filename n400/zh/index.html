@@ -133,6 +133,23 @@
     .cta-band p { color: rgba(255,255,255,0.8); font-size: 1.05rem; margin-bottom: 2rem; max-width: 560px; margin-left: auto; margin-right: auto; }
     .cta-btn-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
+
+    /* CONVERSION QUICK CHECK */
+    .quick-check { background: linear-gradient(180deg,#ffffff 0%,#f8faff 100%); border-bottom: 1px solid var(--gray-200); }
+    .quick-card { max-width: 760px; margin: 0 auto; background: var(--white); border: 1px solid var(--gray-200); border-radius: 20px; padding: 1.5rem; box-shadow: 0 18px 45px rgba(18,42,82,0.10); }
+    .quick-card h3 { font-size: 1.35rem; margin-bottom: 0.35rem; color: var(--blue-dark); }
+    .quick-card .promise { color: var(--gray-500); margin-bottom: 1rem; }
+    .quick-grid { display: grid; gap: 0.9rem; }
+    .quick-q { background: #f9fafb; border: 1px solid var(--gray-200); border-radius: 14px; padding: 0.9rem; }
+    .quick-q legend { font-weight: 700; color: var(--blue-dark); margin-bottom: 0.55rem; }
+    .quick-q label { display: inline-flex; align-items: center; gap: 0.35rem; margin: 0.2rem 0.9rem 0.2rem 0; color: var(--gray-700); font-size: 0.95rem; cursor: pointer; }
+    .quick-result { display: none; margin-top: 1rem; border-radius: 14px; padding: 1rem; border: 1px solid #dbeafe; background: #eff6ff; color: var(--blue-dark); }
+    .quick-result.show { display: block; }
+    .quick-result strong { display:block; margin-bottom:0.4rem; }
+    .micro-note { margin-top:0.8rem; color: var(--gray-400); font-size: 0.78rem; line-height:1.5; }
+    .trust-detail-row { display:flex; flex-wrap:wrap; gap:0.65rem; justify-content:center; margin-top:1rem; }
+    .trust-pill { background:#fff; border:1px solid var(--gray-200); color:var(--blue-dark); border-radius:999px; padding:0.45rem 0.75rem; font-size:0.82rem; font-weight:700; }
+
     /* FOOTER */
     .footer { background: var(--blue-dark); color: rgba(255,255,255,0.75); padding: 3rem 0 1.5rem; }
     .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2.5rem; margin-bottom: 2rem; }
@@ -202,10 +219,10 @@
     <div class="hero-badge">⚖️ 律师全程监督 · 中英双语</div>
     <h1>更省心地完成 N-400 入籍申请<br><span class="gold">AI 引导填写 + 律师审核把关</span></h1>
     <p class="hero-sub">本服务适用于：已经持有美国绿卡、准备申请入籍的人。如果你还没有绿卡，这不是适合你的服务。</p>
-    <p class="hero-sub" style="margin-top:0.75rem;">先做中文资格预审，再决定是否进入完整申请流程。律师把关、流程清楚，特别适合英语一般、希望避免填错和补件的人。</p>
+    <p class="hero-sub" style="margin-top:0.75rem;">先做 2 分钟中文初筛。我们会告诉你是否可能适合 $1,199 标准路径，或是否应先预约律师咨询。联邦移民法服务可覆盖全美。</p>
     <div class="hero-btns">
-      <a href="#tally-form" class="btn btn-primary btn-lg">免费开始资格预审</a>
-      <a href="https://calendly.com/d/cvvv-z6t-jm9/n-400-attorney-consultation" class="btn btn-secondary btn-lg">预约律师咨询</a>
+      <a href="#quick-check" class="btn btn-primary btn-lg" data-track="hero_quick_check">2分钟免费初筛</a>
+      <a href="https://calendly.com/d/cvvv-z6t-jm9/n-400-attorney-consultation" data-track="calendly_click" class="btn btn-secondary btn-lg">预约律师咨询</a>
     </div>
   </div>
 </section>
@@ -215,12 +232,48 @@
   <div class="container">
     <div class="trust-items">
       <span class="trust-item">✅ 执照律师审核</span>
-      <span class="trust-item">✅ 固定价格 · 无隐藏费用</span>
-      <span class="trust-item">✅ 中英双语服务</span>
+      <span class="trust-item">✅ 2分钟免费初筛</span>
+      <span class="trust-item">✅ 提交后给出明确下一步</span>
       <span class="trust-item">✅ Finberg Firm PLLC</span>
     </div>
   </div>
 </div>
+
+<!-- QUICK CHECK -->
+<section class="section quick-check" id="quick-check">
+  <div class="container">
+    <div class="quick-card">
+      <span class="section-eyebrow">第 1 步 · 快速初筛</span>
+      <h3>先回答 3 个问题，再决定是否填写完整表格</h3>
+      <p class="promise">无需付款。大约 2 分钟，先判断你是否可能适合标准 N-400 路径，或是否应先预约律师咨询。</p>
+      <form class="quick-grid" id="n400QuickCheck" data-lang="zh">
+        <fieldset class="quick-q">
+          <legend>1. 你现在已经有美国绿卡吗？</legend>
+          <label><input type="radio" name="green_card" value="yes" required> 有</label>
+          <label><input type="radio" name="green_card" value="no"> 没有</label>
+        </fieldset>
+        <fieldset class="quick-q">
+          <legend>2. 你是准备申请美国入籍 / N-400 吗？</legend>
+          <label><input type="radio" name="n400" value="yes" required> 是</label>
+          <label><input type="radio" name="n400" value="no"> 不是 / 不确定</label>
+        </fieldset>
+        <fieldset class="quick-q">
+          <legend>3. 是否有长时间离境、逮捕/指控、税务、或移民违规问题？</legend>
+          <label><input type="radio" name="risk" value="no" required> 没有明显问题</label>
+          <label><input type="radio" name="risk" value="yes"> 有 / 不确定</label>
+        </fieldset>
+        <button type="submit" class="btn btn-primary btn-lg" data-track="micro_check_submit">查看下一步</button>
+      </form>
+      <div class="quick-result" id="quickResult" aria-live="polite"></div>
+      <div class="trust-detail-row">
+        <span class="trust-pill">Finberg Firm PLLC 律师审核</span>
+        <span class="trust-pill">复杂风险由律师判断</span>
+        <span class="trust-pill">签署委托前不形成律师—客户关系</span>
+      </div>
+      <p class="micro-note">本快速初筛仅供一般信息参考，不构成法律意见。</p>
+    </div>
+  </div>
+</section>
 
 <!-- BENEFITS -->
 <section class="section">
@@ -359,7 +412,7 @@
           <li>律师最终审核</li>
           <li>提交前准备说明及后续指导</li>
         </ul>
-        <a href="#tally-form" class="btn btn-primary btn-block">免费开始资格预审</a>
+        <a href="#quick-check" class="btn btn-primary btn-block" data-track="pricing_quick_check">2分钟免费初筛</a>
         <p class="pricing-note">USCIS 申请费另计。此套餐仅适用于通过资格预审的标准案。</p>
         <p class="pricing-for">适合：资格清晰、无出行/税务/犯罪/执法风险的 Green Path 案件</p>
       </div>
@@ -375,7 +428,7 @@
           <li>明确是否可以及如何推进</li>
           <li>咨询后进一步服务单独报价</li>
         </ul>
-        <a href="https://calendly.com/d/cvvv-z6t-jm9/n-400-attorney-consultation" class="btn btn-outline btn-block">预约律师咨询</a>
+        <a href="https://calendly.com/d/cvvv-z6t-jm9/n-400-attorney-consultation" data-track="calendly_click" class="btn btn-outline btn-block">预约律师咨询</a>
         <p class="pricing-for">适合：出行记录复杂、有犯罪/逮捕记录、税务或选择性兵役问题、或其他需要律师单独评估的情况</p>
       </div>
 
@@ -387,9 +440,9 @@
 <section class="section" id="tally-form" style="background:#f8faff;border-top:1px solid #e5e7eb;">
   <div class="container" style="max-width:680px;">
     <div class="section-header">
-      <span class="section-eyebrow">免费资格预审</span>
-      <h2>了解您的案件是否符合条件</h2>
-      <p>大约3分钟，无需付款。</p>
+      <span class="section-eyebrow">第 2 步 · 完整预审表</span>
+      <h2>填写完整资格预审表</h2>
+      <p>如果快速初筛建议你继续，请填写此表。无需付款，提交后我们会给出下一步。</p>
     </div>
     <div style="background:#fff;border:1px solid #e5e7eb;border-radius:16px;overflow:hidden;">
       <iframe
@@ -399,6 +452,7 @@
         style="min-width:100%;max-width:100%;height:600px;border:none;"
         scrolling="no"
         allow="geolocation; microphone; camera"
+        onload="window.trackN400 && window.trackN400('jotform_iframe_loaded')"
       ></iframe>
     </div>
     <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
@@ -410,11 +464,11 @@
 <!-- CTA BAND -->
 <section class="cta-band" id="intake">
   <div class="container">
-    <h2>先做免费资格预审</h2>
-    <p>大约5分钟。在付费之前，先了解您的案件是否符合 $1,199 标准套餐的条件。</p>
+    <h2>先做 2 分钟快速初筛</h2>
+    <p>先判断你是否可能适合标准路径；如果有风险问题，建议先预约律师咨询。</p>
     <div class="cta-btn-group">
-      <a href="#tally-form" class="btn btn-primary btn-lg">免费开始资格预审</a>
-      <a href="https://calendly.com/d/cvvv-z6t-jm9/n-400-attorney-consultation" class="btn btn-secondary btn-lg">预约 $249 律师咨询</a>
+      <a href="#quick-check" class="btn btn-primary btn-lg" data-track="hero_quick_check">2分钟免费初筛</a>
+      <a href="https://calendly.com/d/cvvv-z6t-jm9/n-400-attorney-consultation" data-track="calendly_click" class="btn btn-secondary btn-lg">预约 $249 律师咨询</a>
     </div>
   </div>
 </section>
@@ -462,6 +516,46 @@
   const toggle = document.querySelector('.nav-toggle');
   const links  = document.querySelector('.nav-links');
   if (toggle) toggle.addEventListener('click', () => links.classList.toggle('open'));
+</script>
+
+<script>
+(function(){
+  function sendEvent(name, params){
+    params = params || {};
+    params.page_language = 'zh';
+    params.n400_page = true;
+    if (typeof gtag === 'function') gtag('event', name, params);
+  }
+  window.trackN400 = sendEvent;
+  document.querySelectorAll('[data-track]').forEach(function(el){
+    el.addEventListener('click', function(){ sendEvent(el.getAttribute('data-track'), {link_url: el.href || '', link_text: (el.textContent || '').trim()}); });
+  });
+  var formSection = document.getElementById('tally-form');
+  if ('IntersectionObserver' in window && formSection) {
+    var seen = false;
+    new IntersectionObserver(function(entries){ entries.forEach(function(entry){ if(entry.isIntersecting && !seen){ seen = true; sendEvent('full_prescreen_section_viewed'); } }); }, {threshold: 0.35}).observe(formSection);
+  }
+  var qf = document.getElementById('n400QuickCheck');
+  if (qf) qf.addEventListener('submit', function(e){
+    e.preventDefault();
+    var fd = new FormData(qf);
+    var green = fd.get('green_card'), n400 = fd.get('n400'), risk = fd.get('risk');
+    var result = document.getElementById('quickResult');
+    var good = green === 'yes' && n400 === 'yes' && risk === 'no';
+    var wrong = green === 'no' || n400 !== 'yes';
+    sendEvent('micro_check_completed', {green_card: green, n400_intent: n400, risk_issue: risk, suggested_path: good ? 'standard_prescreen' : (wrong ? 'not_fit' : 'consultation')});
+    if (good) {
+      result.innerHTML = '<strong>你可能适合标准 N-400 路径。</strong><p>下一步：填写下方完整预审表。无需付款。我们会用它确认你是否可能适合 $1,199 标准套餐。</p><p><a class="btn btn-primary" data-track="micro_to_full_prescreen" href="#tally-form">继续填写完整预审表</a></p>';
+    } else if (wrong) {
+      result.innerHTML = '<strong>这项 N-400 服务可能不适合你。</strong><p>本页适用于已经持有绿卡、准备申请美国入籍的人。如果情况不同，建议先预约律师咨询。</p><p><a class="btn btn-outline" data-track="micro_to_consultation" href="https://calendly.com/d/cvvv-z6t-jm9/n-400-attorney-consultation">预约律师咨询</a></p>';
+    } else {
+      result.innerHTML = '<strong>建议先与律师咨询。</strong><p>长时间离境、逮捕/指控、税务或移民历史问题都可能影响入籍。建议先咨询律师，再决定是否走标准套餐。</p><p><a class="btn btn-outline" data-track="micro_to_consultation" href="https://calendly.com/d/cvvv-z6t-jm9/n-400-attorney-consultation">预约 $249 律师咨询</a></p>';
+    }
+    result.classList.add('show');
+    result.scrollIntoView({behavior:'smooth', block:'center'});
+    result.querySelectorAll('[data-track]').forEach(function(el){ el.addEventListener('click', function(){ sendEvent(el.getAttribute('data-track'), {link_url: el.href || '', link_text: (el.textContent || '').trim()}); }); });
+  });
+})();
 </script>
 
 </body>

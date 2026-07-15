@@ -181,6 +181,7 @@
       function gtag(){dataLayer.push(arguments);}
       gtag("js", new Date());
       gtag("config", "G-N5NRMVH1XV");
+      gtag("config", "AW-11425650604");
     </script>
   </head>
 <body>
@@ -211,9 +212,9 @@
     <div class="hero-badge">⚖️ Attorney-Supervised · EN / 中文</div>
     <h1>Apply for U.S. Citizenship<br>with <span class="gold">Attorney-Guided</span> Support</h1>
     <p class="hero-sub">This service is for green card holders applying for U.S. citizenship (N-400). If you do not have a green card yet, this is not the right service.</p>
-    <p class="hero-sub" style="margin-top:0.75rem;">Start with a 2-minute pre-screen. We will tell you whether you may fit the standard $1,199 path or should speak with an attorney first. Serving clients nationwide under federal immigration law.</p>
+    <p class="hero-sub" style="margin-top:0.75rem;">Complete one 3-minute pre-screen. We will tell you whether you may fit the standard $1,199 path or should speak with an attorney first. Serving clients nationwide under federal immigration law.</p>
     <div class="hero-btns">
-      <a href="#quick-check" class="btn btn-primary btn-lg" data-track="hero_quick_check">Start 2-Minute Free Check</a>
+      <a href="#tally-form" class="btn btn-primary btn-lg" data-track="hero_full_prescreen">Start 3-Minute Free Eligibility Check</a>
       <a href="https://calendly.com/d/cvvv-z6t-jm9/n-400-attorney-consultation" data-track="calendly_click" class="btn btn-secondary btn-lg">Book Attorney Consultation</a>
     </div>
   </div>
@@ -224,45 +225,31 @@
   <div class="container">
     <div class="trust-items">
       <span class="trust-item">✅ Licensed Attorney Review</span>
-      <span class="trust-item">✅ 2-Minute Free Pre-Screen</span>
+      <span class="trust-item">✅ One 3-Minute Free Pre-Screen</span>
       <span class="trust-item">✅ Clear Next Step After Submission</span>
       <span class="trust-item">✅ Finberg Firm PLLC</span>
     </div>
   </div>
 </div>
 
-<!-- QUICK CHECK -->
-<section class="section quick-check" id="quick-check">
-  <div class="container">
+<!-- ONE-STEP ELIGIBILITY PRE-SCREEN -->
+<section class="section quick-check" id="tally-form">
+  <div class="container" style="max-width:760px;">
     <div class="quick-card">
-      <span class="section-eyebrow">Step 1 · Quick Fit Check</span>
-      <h3>Answer 3 questions before the full form</h3>
-      <p class="promise">No payment required. In about 2 minutes, you will know whether to continue to the standard N-400 pre-screen or book an attorney consultation first.</p>
-      <form class="quick-grid" id="n400QuickCheck" data-lang="en">
-        <fieldset class="quick-q">
-          <legend>1. Do you already have a U.S. green card?</legend>
-          <label><input type="radio" name="green_card" value="yes" required> Yes</label>
-          <label><input type="radio" name="green_card" value="no"> No</label>
-        </fieldset>
-        <fieldset class="quick-q">
-          <legend>2. Are you preparing to apply for U.S. citizenship / naturalization?</legend>
-          <label><input type="radio" name="n400" value="yes" required> Yes</label>
-          <label><input type="radio" name="n400" value="no"> No / not sure</label>
-        </fieldset>
-        <fieldset class="quick-q">
-          <legend>3. Any long trips, arrests/charges, tax problems, or prior immigration issues?</legend>
-          <label><input type="radio" name="risk" value="no" required> No major issue</label>
-          <label><input type="radio" name="risk" value="yes"> Yes / not sure</label>
-        </fieldset>
-        <button type="submit" class="btn btn-primary btn-lg" data-track="micro_check_submit">Show My Next Step</button>
-      </form>
-      <div class="quick-result" id="quickResult" aria-live="polite"></div>
+      <span class="section-eyebrow">Free N-400 Eligibility Check</span>
+      <h3>One short form. A clear next step.</h3>
+      <p class="promise">Answer 8 short questions in about 3 minutes. No payment required. Finberg Firm PLLC will review your information and tell you whether the standard $1,199 path may fit or an attorney consultation should come first.</p>
+      <div style="background:#fff;border:1px solid #e5e7eb;border-radius:16px;overflow:hidden;">
+        <iframe id="JotFormIFrame-260963933557166" title="N-400 Free Eligibility Check" src="https://form.jotform.com/260963933557166" style="min-width:100%;max-width:100%;height:720px;border:none;" scrolling="no" allow="geolocation; microphone; camera" onload="window.trackN400 && window.trackN400('jotform_iframe_loaded')"></iframe>
+      </div>
+      <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
+      <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-260963933557166']", "https://form.jotform.com")</script>
       <div class="trust-detail-row">
         <span class="trust-pill">Reviewed by Finberg Firm PLLC</span>
+        <span class="trust-pill">No payment to submit</span>
         <span class="trust-pill">Attorney judgment for risk issues</span>
-        <span class="trust-pill">No attorney-client relationship until engagement</span>
       </div>
-      <p class="micro-note">This quick check is informational only and does not create an attorney-client relationship.</p>
+      <p class="micro-note">Submitting this form does not create an attorney-client relationship and is not legal advice.</p>
     </div>
   </div>
 </section>
@@ -404,7 +391,7 @@
           <li>Attorney final review</li>
           <li>Pre-filing guidance &amp; next-step instructions</li>
         </ul>
-        <a href="#quick-check" class="btn btn-primary btn-block" data-track="pricing_quick_check">Start 2-Minute Free Check</a>
+        <a href="#tally-form" class="btn btn-primary btn-block" data-track="pricing_full_prescreen">Start 3-Minute Free Eligibility Check</a>
         <p class="pricing-note">USCIS filing fees are separate. Available only for cases that qualify for the standard automated path.</p>
         <p class="pricing-for">For: Clear eligibility, no travel/tax/criminal/enforcement risk (Green Path cases)</p>
       </div>
@@ -428,39 +415,13 @@
   </div>
 </section>
 
-<!-- INTAKE FORM -->
-<section class="section" id="tally-form" style="background:#f8faff;border-top:1px solid #e5e7eb;">
-  <div class="container" style="max-width:680px;">
-    <div class="section-header">
-      <span class="section-eyebrow">Step 2 · Full Pre-Screen</span>
-      <h2>Complete the full eligibility pre-screen</h2>
-      <p>If the quick check points you here, complete this form so we can review your next step. No payment required.</p>
-    </div>
-    <!-- JotForm Eligibility Pre-Screen -->
-    <div style="background:#fff;border:1px solid #e5e7eb;border-radius:16px;overflow:hidden;">
-      <iframe
-        id="JotFormIFrame-260963933557166"
-        title="N-400 Eligibility Pre-Screen"
-        src="https://form.jotform.com/260963933557166"
-        style="min-width:100%;max-width:100%;height:600px;border:none;"
-        scrolling="no"
-        allow="geolocation; microphone; camera"
-        onload="window.trackN400 && window.trackN400('jotform_iframe_loaded')"
-      ></iframe>
-    </div>
-    <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
-    <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-260963933557166']", "https://form.jotform.com")</script>
-    <p style="font-size:0.78rem;color:#9ca3af;margin-top:0.75rem;text-align:center;">Submitting this form does not create an attorney-client relationship and is not legal advice.</p>
-  </div>
-</section>
-
 <!-- CTA BAND -->
 <section class="cta-band" id="intake">
   <div class="container">
-    <h2>Start with the 2-minute quick check</h2>
-    <p>First confirm whether you may fit the standard path. If your case has risk issues, book the attorney consultation instead.</p>
+    <h2>Start with the free 3-minute eligibility check</h2>
+    <p>Submit one short form for a clear next step. If your case has risk issues, an attorney consultation may be recommended.</p>
     <div class="cta-btn-group">
-      <a href="#quick-check" class="btn btn-primary btn-lg" data-track="hero_quick_check">Start 2-Minute Free Check</a>
+      <a href="#tally-form" class="btn btn-primary btn-lg" data-track="cta_full_prescreen">Start Free Eligibility Check</a>
       <a href="https://calendly.com/d/cvvv-z6t-jm9/n-400-attorney-consultation" data-track="calendly_click" class="btn btn-secondary btn-lg">Book $249 Attorney Consultation</a>
     </div>
   </div>
@@ -523,6 +484,11 @@
     var seen = false;
     new IntersectionObserver(function(entries){ entries.forEach(function(entry){ if(entry.isIntersecting && !seen){ seen = true; sendEvent('full_prescreen_section_viewed'); } }); }, {threshold: 0.35}).observe(formSection);
   }
+  window.addEventListener('message', function(event){
+    if (event.origin === 'https://smartusvisa.com' && event.data === 'n400_submission_complete:en') {
+      sendEvent('n400_form_submission_confirmed', {form_language:'en'});
+    }
+  });
   var qf = document.getElementById('n400QuickCheck');
   if (qf) qf.addEventListener('submit', function(e){
     e.preventDefault();

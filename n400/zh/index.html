@@ -189,6 +189,7 @@
       function gtag(){dataLayer.push(arguments);}
       gtag("js", new Date());
       gtag("config", "G-N5NRMVH1XV");
+      gtag("config", "AW-11425650604");
     </script>
   </head>
 <body>
@@ -219,9 +220,9 @@
     <div class="hero-badge">⚖️ 律师全程监督 · 中英双语</div>
     <h1>更省心地完成 N-400 入籍申请<br><span class="gold">AI 引导填写 + 律师审核把关</span></h1>
     <p class="hero-sub">本服务适用于：已经持有美国绿卡、准备申请入籍的人。如果你还没有绿卡，这不是适合你的服务。</p>
-    <p class="hero-sub" style="margin-top:0.75rem;">先做 2 分钟中文初筛。我们会告诉你是否可能适合 $1,199 标准路径，或是否应先预约律师咨询。联邦移民法服务可覆盖全美。</p>
+    <p class="hero-sub" style="margin-top:0.75rem;">完成一份 3 分钟中文预审表。我们会告诉你是否可能适合 $1,199 标准路径，或是否应先预约律师咨询。联邦移民法服务可覆盖全美。</p>
     <div class="hero-btns">
-      <a href="#quick-check" class="btn btn-primary btn-lg" data-track="hero_quick_check">2分钟免费初筛</a>
+      <a href="#tally-form" class="btn btn-primary btn-lg" data-track="hero_full_prescreen">3分钟免费资格预审</a>
       <a href="https://calendly.com/d/cvvv-z6t-jm9/n-400-attorney-consultation" data-track="calendly_click" class="btn btn-secondary btn-lg">预约律师咨询</a>
     </div>
   </div>
@@ -232,45 +233,31 @@
   <div class="container">
     <div class="trust-items">
       <span class="trust-item">✅ 执照律师审核</span>
-      <span class="trust-item">✅ 2分钟免费初筛</span>
+      <span class="trust-item">✅ 一份3分钟免费预审表</span>
       <span class="trust-item">✅ 提交后给出明确下一步</span>
       <span class="trust-item">✅ Finberg Firm PLLC</span>
     </div>
   </div>
 </div>
 
-<!-- QUICK CHECK -->
-<section class="section quick-check" id="quick-check">
-  <div class="container">
+<!-- 一步式资格预审 -->
+<section class="section quick-check" id="tally-form">
+  <div class="container" style="max-width:760px;">
     <div class="quick-card">
-      <span class="section-eyebrow">第 1 步 · 快速初筛</span>
-      <h3>先回答 3 个问题，再决定是否填写完整表格</h3>
-      <p class="promise">无需付款。大约 2 分钟，先判断你是否可能适合标准 N-400 路径，或是否应先预约律师咨询。</p>
-      <form class="quick-grid" id="n400QuickCheck" data-lang="zh">
-        <fieldset class="quick-q">
-          <legend>1. 你现在已经有美国绿卡吗？</legend>
-          <label><input type="radio" name="green_card" value="yes" required> 有</label>
-          <label><input type="radio" name="green_card" value="no"> 没有</label>
-        </fieldset>
-        <fieldset class="quick-q">
-          <legend>2. 你是准备申请美国入籍 / N-400 吗？</legend>
-          <label><input type="radio" name="n400" value="yes" required> 是</label>
-          <label><input type="radio" name="n400" value="no"> 不是 / 不确定</label>
-        </fieldset>
-        <fieldset class="quick-q">
-          <legend>3. 是否有长时间离境、逮捕/指控、税务、或移民违规问题？</legend>
-          <label><input type="radio" name="risk" value="no" required> 没有明显问题</label>
-          <label><input type="radio" name="risk" value="yes"> 有 / 不确定</label>
-        </fieldset>
-        <button type="submit" class="btn btn-primary btn-lg" data-track="micro_check_submit">查看下一步</button>
-      </form>
-      <div class="quick-result" id="quickResult" aria-live="polite"></div>
+      <span class="section-eyebrow">N-400 免费资格预审</span>
+      <h3>只填一份短表，获得明确下一步</h3>
+      <p class="promise">大约 3 分钟回答 8 个简短问题，无需付款。Finberg Firm PLLC 将审核你的信息，告诉你是否可能适合 $1,199 标准路径，或是否应先预约律师咨询。</p>
+      <div style="background:#fff;border:1px solid #e5e7eb;border-radius:16px;overflow:hidden;">
+        <iframe id="JotFormIFrame-260964475771166-zh" title="N-400 免费资格预审" src="https://form.jotform.com/260964475771166" style="min-width:100%;max-width:100%;height:720px;border:none;" scrolling="no" allow="geolocation; microphone; camera" onload="window.trackN400 && window.trackN400('jotform_iframe_loaded')"></iframe>
+      </div>
+      <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
+      <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-260964475771166-zh']", "https://form.jotform.com")</script>
       <div class="trust-detail-row">
         <span class="trust-pill">Finberg Firm PLLC 律师审核</span>
+        <span class="trust-pill">提交无需付款</span>
         <span class="trust-pill">复杂风险由律师判断</span>
-        <span class="trust-pill">签署委托前不形成律师—客户关系</span>
       </div>
-      <p class="micro-note">本快速初筛仅供一般信息参考，不构成法律意见。</p>
+      <p class="micro-note">提交此表不构成法律意见，也不形成律师—客户关系。</p>
     </div>
   </div>
 </section>
@@ -412,7 +399,7 @@
           <li>律师最终审核</li>
           <li>提交前准备说明及后续指导</li>
         </ul>
-        <a href="#quick-check" class="btn btn-primary btn-block" data-track="pricing_quick_check">2分钟免费初筛</a>
+        <a href="#tally-form" class="btn btn-primary btn-block" data-track="pricing_full_prescreen">3分钟免费资格预审</a>
         <p class="pricing-note">USCIS 申请费另计。此套餐仅适用于通过资格预审的标准案。</p>
         <p class="pricing-for">适合：资格清晰、无出行/税务/犯罪/执法风险的 Green Path 案件</p>
       </div>
@@ -436,38 +423,13 @@
   </div>
 </section>
 
-<!-- 资格预审表单 -->
-<section class="section" id="tally-form" style="background:#f8faff;border-top:1px solid #e5e7eb;">
-  <div class="container" style="max-width:680px;">
-    <div class="section-header">
-      <span class="section-eyebrow">第 2 步 · 完整预审表</span>
-      <h2>填写完整资格预审表</h2>
-      <p>如果快速初筛建议你继续，请填写此表。无需付款，提交后我们会给出下一步。</p>
-    </div>
-    <div style="background:#fff;border:1px solid #e5e7eb;border-radius:16px;overflow:hidden;">
-      <iframe
-        id="JotFormIFrame-260964475771166-zh"
-        title="N-400 资格预审"
-        src="https://form.jotform.com/260964475771166"
-        style="min-width:100%;max-width:100%;height:600px;border:none;"
-        scrolling="no"
-        allow="geolocation; microphone; camera"
-        onload="window.trackN400 && window.trackN400('jotform_iframe_loaded')"
-      ></iframe>
-    </div>
-    <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
-    <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-260964475771166-zh']", "https://form.jotform.com")</script>
-    <p style="font-size:0.78rem;color:#9ca3af;margin-top:0.75rem;text-align:center;">提交此表单不构成法律意见，不形成律师—客户关系。</p>
-  </div>
-</section>
-
 <!-- CTA BAND -->
 <section class="cta-band" id="intake">
   <div class="container">
-    <h2>先做 2 分钟快速初筛</h2>
-    <p>先判断你是否可能适合标准路径；如果有风险问题，建议先预约律师咨询。</p>
+    <h2>先做 3 分钟免费资格预审</h2>
+    <p>只提交一份短表，即可获得明确下一步；有风险问题时，我们会建议先预约律师咨询。</p>
     <div class="cta-btn-group">
-      <a href="#quick-check" class="btn btn-primary btn-lg" data-track="hero_quick_check">2分钟免费初筛</a>
+      <a href="#tally-form" class="btn btn-primary btn-lg" data-track="cta_full_prescreen">开始免费资格预审</a>
       <a href="https://calendly.com/d/cvvv-z6t-jm9/n-400-attorney-consultation" data-track="calendly_click" class="btn btn-secondary btn-lg">预约 $249 律师咨询</a>
     </div>
   </div>
@@ -535,6 +497,11 @@
     var seen = false;
     new IntersectionObserver(function(entries){ entries.forEach(function(entry){ if(entry.isIntersecting && !seen){ seen = true; sendEvent('full_prescreen_section_viewed'); } }); }, {threshold: 0.35}).observe(formSection);
   }
+  window.addEventListener('message', function(event){
+    if (event.origin === 'https://smartusvisa.com' && event.data === 'n400_submission_complete:zh') {
+      sendEvent('n400_form_submission_confirmed', {form_language:'zh'});
+    }
+  });
   var qf = document.getElementById('n400QuickCheck');
   if (qf) qf.addEventListener('submit', function(e){
     e.preventDefault();
